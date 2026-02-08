@@ -1,0 +1,39 @@
+.leads-section {
+    margin-top: 15px;
+  }
+  
+  .lead-item {
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .new {
+    color: green;
+  }
+  
+  .contacted {
+    color: blue;
+  }
+  
+  .closed-won {
+    color: darkgreen;
+  }
+  
+  .closed-lost {
+    color: red;
+  }
+
+  a {
+    color: inherit;        /* inherit parent text color */
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* optional */
+  }
+  
+  

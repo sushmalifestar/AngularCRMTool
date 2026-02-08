@@ -2,10 +2,8 @@
 
 <p>Welcome, {{user}}</p>
 
-<button (click)="onSeeLeadsClick()">See Your Leads</button> <br><br>
+<p>Select an option from the navigation.</p>
 
-<p [style.color]="customColor" *ngIf="isSeeLeadsClicked"> You have total {{yourLeads}} lead/(s)</p>
 
-<input type="text" placeholder="search here" [(ngModel)]="searchText">
+    
 
-<p *ngIf="searchText"> You are searching for : {{searchText}}</p>

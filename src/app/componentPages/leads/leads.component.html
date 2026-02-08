@@ -1,0 +1,31 @@
+<h3>Your Leads</h3>
+
+<app-lead-search (searchChanged)="onSearchTextChange($event)"></app-lead-search><br>
+
+<button (click)="resetSearchFromParent()">
+  Reset Search
+</button>
+
+<br><br>
+
+<button (click)="showListView()">List View</button>
+<button (click)="showCardView()">Card View</button>
+
+<br><br>
+
+<app-lead-list *ngIf="viewMode  === 'list'" [leads]="filteredLeads">
+</app-lead-list>
+
+<div *ngIf="viewMode === 'card'">
+
+  <div class="toolbar">
+    <button type="button" (click)="collapseAll()">Collapse All</button>
+    <button type="button" (click)="submit()">Submit</button>
+  </div>
+
+  <br><br>
+
+  <app-lead-card *ngFor="let lead of filteredLeads" [lead]="lead">
+  </app-lead-card>
+
+</div>

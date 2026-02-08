@@ -1,0 +1,5 @@
+
+<div>
+    <input type="text" placeholder="search here"  (input)="onSearchChange()" [(ngModel)]="searchText">
+    <p *ngIf="searchText"> You are searching for : {{searchText}}</p>
+</div>

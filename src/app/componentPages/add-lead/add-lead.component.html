@@ -1,0 +1,29 @@
+
+<form #leadForm="ngForm" (ngSubmit)="addLead(leadForm)">
+
+    <div>
+        <input type="text" name="leadName" placeholder="Lead name" [(ngModel)]="newLead.name" required
+        #leadName="ngModel">
+        <p *ngIf="leadName.invalid && leadName.touched" style="color: red;">
+            Lead name is required
+          </p>
+    </div>
+
+    <div>
+    <select name="leadStage" [(ngModel)]="newLead.stage" required>
+        <option value="New">New</option>
+        <option value="Contacted">Contacted</option>
+        <option value="Closed Won">Closed Won</option>
+        <option value="Closed Lost">Closed Lost</option>
+    </select>
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="leadForm.invalid">Add</button>
+    </div>
+
+</form>
+
+<p *ngIf="message" style="color: green;">
+    {{ message }}
+  </p>

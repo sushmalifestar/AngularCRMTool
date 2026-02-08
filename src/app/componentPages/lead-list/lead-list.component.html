@@ -1,0 +1,23 @@
+
+<div>
+
+<p [style.color]="customColor"> You have total {{leads.length}} lead(s)</p>
+
+<ul class="leads-section">
+    <li class="lead-item" *ngFor="let lead of leads"
+    >
+        <a  [routerLink]="['/leads', lead.id]">
+            {{ lead.name }} -
+            <span [ngClass]="{
+                'new': lead.stage === 'New',
+                'contacted': lead.stage === 'Contacted',
+                'closed-won': lead.stage === 'Closed Won',
+                'closed-lost': lead.stage === 'Closed Lost'
+              }"> {{ lead.stage }}</span>
+          </a>
+    </li>
+</ul>
+
+</div>
+
+

@@ -1,0 +1,13 @@
+
+<h3>Lead Details</h3>
+
+<div *ngIf="lead; else notFound">
+  <p><strong>ID:</strong> {{ lead.id }}</p>
+  <p><strong>Name:</strong> {{ lead.name }}</p>
+  <p><strong>Stage:</strong> {{ lead.stage }}</p>
+</div>
+
+<ng-template #notFound>
+  <p>Lead not found</p>
+</ng-template>
+

@@ -1,0 +1,14 @@
+
+<div class="card" [id]="'lead-' + lead.id">
+    <h3 (click)="toggle()">{{ lead.name }}</h3>
+  
+    <div *ngIf="expanded">
+      <p>Status: {{ lead.stage }}</p>
+      <button (click)="editMode = true">Edit</button>
+    </div>
+  
+    <div *ngIf="editMode">
+      <!-- edit form -->
+    </div>
+  </div>
+  
