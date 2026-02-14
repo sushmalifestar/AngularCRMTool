@@ -1,1 +1,29 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+
+    <input type="text" placeholder="Username" formControlName="username" />
+    <div style="color:red"
+     *ngIf="
+       loginForm.get('username')?.invalid &&
+       (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)
+     ">
+        <small *ngIf="loginForm.get('username')?.errors?.['required']" >Username is required</small>
+        <small *ngIf="loginForm.get('username')?.errors?.['noSpace']">
+         Username should not contain spaces</small>
+      </div>
+
+    <br /><br />
+    
+    <input type="password" placeholder="Password" formControlName="password" />
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <small style="color:red">Password is required and must be at least 6 characters</small>
+      </div>
+    
+    <br /><br />
+    
+    <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
+
+</form>
+
+<p>{{ loginForm.get('username')?.errors | json }}</p>
+
+
